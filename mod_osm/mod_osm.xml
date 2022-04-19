@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+    <name>OSM - Programme</name>
+    <creationDate>March 2022</creationDate>
+    <author>Graham White</author>
+    <license>GNU General Public License version 2 or later; see LICENSE</license>
+    <version>1.0.0</version>
+    <description>Brings Online Scout Manager (OSM) programme content to your site</description>
+    <element>mod_osm</element>
+    <files>
+        <filename module="mod_osm">mod_osm.php</filename>
+        <folder>sql</folder>
+        <folder>tmpl</folder>
+        <folder>Helper</folder>
+        <filename>mod_osm.xml</filename>
+    </files>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates</schemapath>
+        </schemas>
+    </update>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="instructions1" type="note" label="OSM Credentials" description="You must supply credentials for your OSM Account - this is NOT your user name and password.  Log into OSM, go to Settings->My Account Details->Developer Tools and click the Create Application button, name the application and click Save. Copy the OAuth Client ID and OAuth Secret that OSM displays.  No further configuration inside OSM is necessary." />
+                <field name="clientId" type="text" label="OSM OAuth Client ID" description="Client ID from OSM Application for OAuth authentication" required="true" />
+                <field name="clientSecret" type="password" label="OSM OAuth Client Secret" description="Client Secret from OSM Application for OAuth authentication" required="true" />
+                <field name="instructions2" type="note" label="Section" description="You must supply the section name or section ID that you want to display.  This can be found by logging into OSM, the full section name must be used including the hyphen but not including your group name e.g. 'Beavers - Kits Colony'." />
+                <field name="sectionName" type="text" label="Section Name or ID" description="The full name of the section or the numeric ID given to the section in the OSM API" required="true" />
+                <field name="instructions3" type="note" label="Styling" />
+                <field name="showNotes" type="radio" label="Show Meeting Notes" class="btn-group btn-group-yesno" description="Whether to hide the meeting notes (default show)" default="1">
+                    <option value="0">JHide</option>
+                    <option value="1">JShow</option>
+                </field>
+                <field name="css" type="textarea" label="Custom CSS" description="You can style the output using CSS and the class names mod_osm_header (for the title of the meeting), mod_osm_datetime (for the date and time of the meeting) and mod_osm_notes (for the meeting notes, if shown)" filter="raw" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
