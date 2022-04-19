@@ -46,4 +46,7 @@
             </fieldset>
         </fields>
     </config>
+    <updateservers>
+        <server type="extension" priority="1" name="OSM - Programme">https://raw.githubusercontent.com/grahamwhiteuk/joomla-osm-programme/main/update.xml</server>
+    </updateservers>
 </extension>
