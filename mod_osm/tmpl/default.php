@@ -44,22 +44,24 @@ defined('_JEXEC') or die;
 
 // output either the correct module output or an error message
 if (empty($error)) {
-    if (empty($nextMeeting) && $params->get('showNotFound', '1') === '1') {
-        // container div
-        echo "<div class='mod_osm'>";
+    if (empty($nextMeeting)) {
+        if (&& $params->get('showNotFound', '1') === '1') {
+            // container div
+            echo "<div class='mod_osm'>";
 
-        // section name
-        echo "<div class='mod_osm_header'>";
-        echo $section;
-        echo "</div>";
+            // section name
+            echo "<div class='mod_osm_header'>";
+            echo $section;
+            echo "</div>";
 
-        // message about unknown meeting
-        echo "<div class='mod_osm_notes'><p>";
-        echo "Unable to find details for the next meeting.";
-        echo "</p></div>";
+            // message about unknown meeting
+            echo "<div class='mod_osm_notes'><p>";
+            echo "Unable to find details for the next meeting.";
+            echo "</p></div>";
 
-        // end container div
-        echo "</div>";
+            // end container div
+            echo "</div>";
+        }
 
     } else {
         $starttime = new DateTime($nextMeeting->starttime);
