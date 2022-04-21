@@ -39,6 +39,7 @@ $defaultStyle = '.mod_osm_header {
 }
 .mod_osm_notes pre {
     margin: 0;
+    white-space: pre-wrap;
 }';
 
 if (empty($clientId) || empty($clientSecret) || empty($section)) {
