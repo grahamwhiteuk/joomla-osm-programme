@@ -38,6 +38,10 @@
                 <field name="instructions2" type="note" label="Section" description="You must supply the section name or section ID that you want to display.  This can be found by logging into OSM, the full section name must be used including the hyphen but not including your group name e.g. 'Beavers - Kits Colony'." />
                 <field name="sectionName" type="text" label="Section Name or ID" description="The full name of the section or the numeric ID given to the section in the OSM API" required="true" />
                 <field name="instructions3" type="note" label="Styling" />
+                <field name="showNotFound" type="radio" label="Show When there is no Next Meeting Scheduled" class="btn-group btn-group-yesno" description="The module will give no output at all if the next meeting can't be found because nothing is scheduled in OSM (default show)" default="1">
+                    <option value="0">JHide</option>
+                    <option value="1">JShow</option>
+                </field>
                 <field name="showNotes" type="radio" label="Show Meeting Notes" class="btn-group btn-group-yesno" description="Whether to hide the meeting notes (default show)" default="1">
                     <option value="0">JHide</option>
                     <option value="1">JShow</option>
