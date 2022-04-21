@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ZIPFILE="joomla-osm-module.zip"
+ZIPFILE="joomla-osm-programme.zip"
 
 cd mod_osm || exit 1
 rm -rf ../${ZIPFILE}
