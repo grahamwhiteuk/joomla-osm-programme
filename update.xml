@@ -15,8 +15,8 @@
 		</tags>
 		<maintainer>Graham White</maintainer>
 		<targetplatform name="joomla" version=".*" />
-		<sha256>fbd66d3bf8a07714a69ad30a07aa7185c3b701ec2dce7ca1ea98d8a74e250fd7</sha256>
-		<sha384>c9fff6064e2ed97e998eb85baa3d22858c35a1b89b2e0efb80921f76df166946dd163599598dfeedf63e90b676c2bd69</sha384>
-		<sha512>434dc4fec1ae25144cd5812db23f5acdda0e9539ecdfad8dee4bf261a48991f643c80b1677ac3ca49a59d57c5cc25cb9a8049dacd5bca7cc8d718c4fa3b5128f</sha512>
+		<sha256>6846b86b0f252ad9b1e3a45b9d2ef73f2a4f04aab1121d6e1521abdf6a1731aa</sha256>
+		<sha384>49c5cc8c313efe5419ab550bd886a8e562dd374fc21beab6c1a48c1d5751aba8cb8e27f8e0cd6b215a97b62e8dfeb76c</sha384>
+		<sha512>b303cc48e44979cc56263a80f68ecdaa600b00a1360033ea642b9731d1c5364fcd8d88758c420717ca123c546d9cbc7b0856e750d82df882d16fea39256efaca</sha512>
 	</update>
 </updates>
