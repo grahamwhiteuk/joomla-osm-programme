@@ -45,7 +45,7 @@ defined('_JEXEC') or die;
 // output either the correct module output or an error message
 if (empty($error)) {
     if (empty($nextMeeting)) {
-        if (&& $params->get('showNotFound', '1') === '1') {
+        if ($params->get('showNotFound', '1') === '1') {
             // container div
             echo "<div class='mod_osm'>";
 
