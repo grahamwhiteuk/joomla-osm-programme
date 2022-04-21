@@ -3,7 +3,7 @@
 ZIPFILE="joomla-osm-programme.zip"
 
 cd mod_osm || exit 1
-rm -rf ../${ZIPFILE}
+rm -f ../${ZIPFILE}
 zip -r ../${ZIPFILE} *
 cd ..
 sha256sum ${ZIPFILE}
