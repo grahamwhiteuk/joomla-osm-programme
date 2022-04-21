@@ -4,7 +4,7 @@
     <creationDate>March 2022</creationDate>
     <author>Graham White</author>
     <license>GNU General Public License version 2 or later; see LICENSE</license>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <description>Brings Online Scout Manager (OSM) programme content to your site</description>
     <element>mod_osm</element>
     <files>
