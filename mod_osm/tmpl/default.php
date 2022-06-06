@@ -38,7 +38,7 @@ if (empty($error)) {
 
             // section name
             echo "<div class='mod_osm_header'>";
-            echo $section;
+            echo "No Meeting Found";
             echo "</div>";
 
             // message about unknown meeting
