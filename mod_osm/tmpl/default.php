@@ -29,19 +29,6 @@ defined('_JEXEC') or die;
  *   num parentsattendingcount
  */
 
-// echo '<p>MOD OSM</p>';
-// echo '<pre>';
-// var_dump($params);
-// echo '</pre>';
-// echo "<br />";
-// echo '<pre>';
-// var_dump($debug);
-// echo '</pre>';
-// echo "<br />";
-// echo "<pre>";
-// print_r($response);
-// echo "</pre>";
-
 // output either the correct module output or an error message
 if (empty($error)) {
     if (empty($nextMeeting)) {
@@ -64,8 +51,13 @@ if (empty($error)) {
         }
 
     } else {
-        $starttime = new DateTime($nextMeeting->starttime);
-        $endtime = new DateTime($nextMeeting->endtime);
+        $showtime = TRUE;
+        if (empty($nextMeeting->starttime)) {
+            $showtime = FALSE;
+        } else {
+            $starttime = new DateTime($nextMeeting->starttime);
+            $endtime = new DateTime($nextMeeting->endtime);
+        }
         $date = new DateTime($nextMeeting->meetingdate);
 
         // container div
@@ -79,12 +71,14 @@ if (empty($error)) {
         // meeting date and time
         echo "<div class='mod_osm_datetime'>";
         echo "<span class='mod_osm_date'>";
-        echo $date->format('l jS F, ');
+        echo $date->format('l jS F');
         echo "</span>";
-        echo "<span class='mod_osm_time'>";
-        echo $starttime->format('G:i-');
-        echo $endtime->format('G:i');
-        echo "</span>";
+        if ($showtime) {
+            echo "<span class='mod_osm_time'>";
+            echo $starttime->format(', G:i-');
+            echo $endtime->format('G:i');
+            echo "</span>";
+        }
         echo "</div>";
 
         // meeting notes
