@@ -29,12 +29,11 @@ $resource = NULL;
 
 // Default styling
 $defaultStyle = '.mod_osm_header {
-	font-weight: bold;
-    font-size: 150%;
+	font-weight: 500;
+    font-size: 1.50rem;
 }
 .mod_osm_datetime {
     margin-bottom: .5rem;
-    font-size: 90%;
     font-style: italic;
 }
 .mod_osm_notes pre {
