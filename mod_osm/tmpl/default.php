@@ -52,7 +52,7 @@ if (empty($error)) {
 
     } else {
         $showtime = TRUE;
-        if (empty($nextMeeting->starttime)) {
+        if (empty($nextMeeting->starttime) || ($nextMeeting->starttime == '00:00:00')) {
             $showtime = FALSE;
         } else {
             $starttime = new DateTime($nextMeeting->starttime);
