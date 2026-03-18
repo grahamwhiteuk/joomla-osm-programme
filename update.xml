@@ -17,8 +17,8 @@
 		<maintainer>Graham White</maintainer>
 		<maintainerurl>https://github.com/grahamwhiteuk/joomla-osm-programme/</maintainerurl>
 		<targetplatform name="joomla" version=".*" />
-		<sha256>8bd673164e28028e83fcf8decafd57cbac1ff206fb737d41bfce52cdf25e90ae</sha256>
-		<sha384>d3f9bb5d999f4aa6c26f6abdec8d88326e9574730655920c3f727293b60abfbded96999d7a18a2d80ba86ef9672bdef0</sha384>
-		<sha512>f64f6c0fa000b7fbf0f28d9860e1adc44bfc2b0799da0d99164ae773397e69d53ea23f8e63704d502dac15ca7fb359c1ac57f1536bf56f487d76eb1af7a47bb2</sha512>
+		<sha256>eb1d351109219942979f20e9942e8987625ac1a5f9d5e2e254eecc4baa3289bc</sha256>
+		<sha384>4e26ff34d99ef905912590f1cc1cd2c8e185d6a8bf46f8698a92c2b01ea0e924b9e28067964ebbbb967335793224f7e2</sha384>
+		<sha512>10da20d6f95a6404c91c34a3111846ad3344a606733d9588c5d3cbfbed8cc939ff650d9c878a85247d9ca856184430d5a19653ac90c51621f8c9d195154b0240</sha512>
 	</update>
 </updates>
