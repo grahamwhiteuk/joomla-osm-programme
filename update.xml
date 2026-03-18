@@ -6,14 +6,16 @@
 		<element>mod_osm</element>
 		<type>module</type>
 		<client>site</client>
-		<version>1.0.7</version>
+		<version>1.0.8</version>
+		<infourl title="Changelog">https://github.com/grahamwhiteuk/joomla-osm-programme/releases/tag/v1.0.8/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/grahamwhiteuk/joomla-osm-programme/releases/download/v1.0.7/joomla-osm-programme.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/grahamwhiteuk/joomla-osm-programme/releases/download/v1.0.8/joomla-osm-programme.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>stable</tag>
 		</tags>
 		<maintainer>Graham White</maintainer>
+		<maintainerurl>https://github.com/grahamwhiteuk/joomla-osm-programme/</maintainerurl>
 		<targetplatform name="joomla" version=".*" />
 		<sha256>8bd673164e28028e83fcf8decafd57cbac1ff206fb737d41bfce52cdf25e90ae</sha256>
 		<sha384>d3f9bb5d999f4aa6c26f6abdec8d88326e9574730655920c3f727293b60abfbded96999d7a18a2d80ba86ef9672bdef0</sha384>

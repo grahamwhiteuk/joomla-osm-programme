@@ -28,7 +28,7 @@ class Utility
 	public static function isDateInTheFuture($dateStr) {
 		$now = date('Y-m-d');
 		$date = date('Y-m-d', strtotime($dateStr));
-		if ($now < $date) {
+		if ($now <= $date) {
 			return TRUE;
 		} else {
 			return FALSE;
