@@ -26,6 +26,7 @@ $sectionIndex = NULL;
 $termIndex = NULL;
 $nextMeeting = NULL;
 $resource = NULL;
+$meetings = [];
 
 // Default styling
 $defaultStyle = '.mod_osm_header {
@@ -50,7 +51,7 @@ $css = $params->get('css');
 if (empty($css)) {
     $css = $defaultStyle;
 }
-$document = JFactory::getDocument();
+$document = Factory::getDocument();
 $document->addStyleDeclaration($css);
 
 // Get an instance of the OSM Helper
@@ -87,22 +88,21 @@ if (empty($sectionId)) {
 }
 
 // Search through the list of Terms, looking for the current term
-foreach ($resource->data->sections[$sectionIndex]->terms as $key => $termObj) {
-    if (Utility::isNowBetweenDates($termObj->startdate, $termObj->enddate)) {
-        $termId = $termObj->term_id;
-        $termIndex = $key;
-        break;
-    }
+if (!empty($sectionIndex)) {
+	foreach ($resource->data->sections[$sectionIndex]->terms as $key => $termObj) {
+		if (Utility::isNowBetweenDates($termObj->startdate, $termObj->enddate)) {
+			$termId = $termObj->term_id;
+			$termIndex = $key;
+			break;
+		}
+	}
 }
 
-// store some bits that are useful for debugging
+// store some bits that are useful for debugging (excluding sensitive data)
 $debug = array(
-    "section" => $section,
-    "clientId" => $clientId,
-    "clientSecret" => $clientSecret,
-    "token" => $OSMHelper->getToken(),
-    "sectionId" => $sectionId,
-    "sectionIndex" => $sectionIndex
+	"section" => $section,
+	"sectionId" => $sectionId,
+	"sectionIndex" => $sectionIndex
 );
 
 if (empty($termId)) {
@@ -112,9 +112,14 @@ if (empty($termId)) {
 }
 
 if (empty($error)) {
-    // call the OSM API to get the programme for the given section and current term
-    $programme = $OSMHelper->getProgramme($sectionId, $termId);
-    $meetings = $programme->items; // the programme returns a list of items (meetings)
+	// call the OSM API to get the programme for the given section and current term
+	$programme = $OSMHelper->getProgramme($sectionId, $termId);
+	if (empty($programme) || !isset($programme->items)) {
+		$error .= "<p><b>Error: unable to retrieve programme.</b></p>";
+		$meetings = [];
+	} else {
+		$meetings = $programme->items; // the programme returns a list of items (meetings)
+	}
 }
 
 // search through the meetings attempting to find the next one

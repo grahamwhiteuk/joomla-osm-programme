@@ -10,6 +10,8 @@
 // No direct access to this file
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
+
 class Utility
 {
 	public static function isNowBetweenDates($startDateStr, $endDateStr) {
@@ -26,7 +28,7 @@ class Utility
 	public static function isDateInTheFuture($dateStr) {
 		$now = date('Y-m-d');
 		$date = date('Y-m-d', strtotime($dateStr));
-		if ($now <= $date) {
+		if ($now < $date) {
 			return TRUE;
 		} else {
 			return FALSE;
@@ -39,7 +41,7 @@ class DatabaseHelper
 	// returns whether a record for the given URL is already in the database
 	public static function urlExists($url) {
 		// Obtain a database connection
-		$db = JFactory::getDbo();
+		$db = Factory::getDbo();
 		// Retrieve url
 		$query = $db->getQuery(true)
 					->select($db->quoteName('response'))
@@ -60,7 +62,7 @@ class DatabaseHelper
 	// reads from the database
 	public static function readRow($url) {
 		// Obtain a database connection
-		$db = JFactory::getDbo();
+		$db = Factory::getDbo();
 		// Retrieve url
 		$query = $db->getQuery(true)
 					->select('*')
@@ -75,7 +77,7 @@ class DatabaseHelper
 
 	public static function writeRow($url, $response) {
 		// Get a db connection.
-		$db = JFactory::getDbo();
+		$db = Factory::getDbo();
 
 		// Create a new query object.
 		$query = $db->getQuery(true);
@@ -180,6 +182,8 @@ class OSMHelper
 
 		$response = curl_exec($ch);
 		if (curl_errno($ch)) {
+			error_log('OSM Module cURL error (token): ' . curl_error($ch));
+			curl_close($ch);
 			return FALSE;
 		}
 		curl_close($ch);
@@ -236,6 +240,8 @@ class OSMHelper
 
 		$response = curl_exec($ch);
 		if (curl_errno($ch)) {
+			error_log('OSM Module cURL error (API): ' . curl_error($ch));
+			curl_close($ch);
 			return FALSE;
 		}
 		curl_close($ch);

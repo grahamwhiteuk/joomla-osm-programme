@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" method="upgrade">
     <name>OSM - Programme</name>
-    <creationDate>March 2022</creationDate>
+    <creationDate>March 2026</creationDate>
     <author>Graham White</author>
     <license>GNU General Public License version 2 or later; see LICENSE</license>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <description>Brings Online Scout Manager (OSM) programme content to your site</description>
     <element>mod_osm</element>
     <files>

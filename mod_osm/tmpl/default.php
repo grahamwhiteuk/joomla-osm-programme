@@ -8,6 +8,8 @@
 // No direct access to this file
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Filter\OutputFilter;
+
 /**
  * $nextMeeting keys
  *   num eveningid
@@ -65,7 +67,7 @@ if (empty($error)) {
 
         // meeting title
         echo "<div class='mod_osm_header'>";
-        echo $nextMeeting->title;
+        echo htmlspecialchars($nextMeeting->title, ENT_QUOTES, 'UTF-8');
         echo "</div>";
 
         // meeting date and time
@@ -83,9 +85,9 @@ if (empty($error)) {
 
         // meeting notes
         if (!empty($nextMeeting->notesforparents) && $params->get('showNotes', '1') === '1') {
-            echo "<div class='mod_osm_notes'><pre>";
-            echo $nextMeeting->notesforparents;
-            echo "</pre></div>";
+        	echo "<div class='mod_osm_notes'><pre>";
+        	echo htmlspecialchars($nextMeeting->notesforparents, ENT_QUOTES, 'UTF-8');
+        	echo "</pre></div>";
         }
 
         // end container div
