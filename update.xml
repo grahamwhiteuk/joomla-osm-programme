@@ -6,10 +6,10 @@
 		<element>mod_osm</element>
 		<type>module</type>
 		<client>site</client>
-		<version>1.0.8</version>
-		<infourl title="Changelog">https://github.com/grahamwhiteuk/joomla-osm-programme/releases/tag/v1.0.8/</infourl>
+		<version>1.0.9</version>
+		<infourl title="Changelog">https://github.com/grahamwhiteuk/joomla-osm-programme/releases/tag/v1.0.9/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/grahamwhiteuk/joomla-osm-programme/releases/download/v1.0.8/joomla-osm-programme.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/grahamwhiteuk/joomla-osm-programme/releases/download/v1.0.9/joomla-osm-programme.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>stable</tag>
@@ -17,8 +17,8 @@
 		<maintainer>Graham White</maintainer>
 		<maintainerurl>https://github.com/grahamwhiteuk/joomla-osm-programme/</maintainerurl>
 		<targetplatform name="joomla" version=".*" />
-		<sha256>eb1d351109219942979f20e9942e8987625ac1a5f9d5e2e254eecc4baa3289bc</sha256>
-		<sha384>4e26ff34d99ef905912590f1cc1cd2c8e185d6a8bf46f8698a92c2b01ea0e924b9e28067964ebbbb967335793224f7e2</sha384>
-		<sha512>10da20d6f95a6404c91c34a3111846ad3344a606733d9588c5d3cbfbed8cc939ff650d9c878a85247d9ca856184430d5a19653ac90c51621f8c9d195154b0240</sha512>
+		<sha256>19ba7f09c53b59a9d0d2880ee37bb912054b465fa155c07a51fcda300fbcd6e4</sha256>
+		<sha384>8d1a020b82b01d2e791dd354aeaaf67be8c1f8704598e94d45af4341965cebb754fffacae0216dd9e6b0d1c0542dacb4</sha384>
+		<sha512>5cf244ed7f3eb5e87babcf49706fca3af52d904432fcf749cf712c2a86f524b0167d820293fbd23b97893a94402594f04ea62153608a601ed1ccd21bfa6b362c</sha512>
 	</update>
 </updates>

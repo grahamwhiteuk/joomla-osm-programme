@@ -88,14 +88,12 @@ if (empty($sectionId)) {
 }
 
 // Search through the list of Terms, looking for the current term
-if (!empty($sectionIndex)) {
-	foreach ($resource->data->sections[$sectionIndex]->terms as $key => $termObj) {
-		if (Utility::isNowBetweenDates($termObj->startdate, $termObj->enddate)) {
-			$termId = $termObj->term_id;
-			$termIndex = $key;
-			break;
-		}
-	}
+foreach ($resource->data->sections[$sectionIndex]->terms as $key => $termObj) {
+    if (Utility::isNowBetweenDates($termObj->startdate, $termObj->enddate)) {
+        $termId = $termObj->term_id;
+        $termIndex = $key;
+        break;
+    }
 }
 
 // store some bits that are useful for debugging (excluding sensitive data)
